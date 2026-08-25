@@ -1,5 +1,5 @@
 {
-  description = "NixOS-WSL specific configuration"
+  description = "NixOS-WSL specific configuration";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
