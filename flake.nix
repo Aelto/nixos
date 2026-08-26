@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
     nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -18,6 +19,22 @@
         ./hosts/wsl.nix
       ];
     };
+
+    nixosConfigurations.wsl_server = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        nixos-wsl.nixosModules.wsl
+        ./hosts/wsl_server.nix
+        self.nixosModules.my_nginx
+      ];
+    };
+
+    nixosConfigurations.ashford = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+
+      ]
+    }
   };
 
 }

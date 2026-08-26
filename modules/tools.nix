@@ -2,8 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
-    curl wget htop git
-
+    git
+    curl wget htop
     just
   ];
 }
