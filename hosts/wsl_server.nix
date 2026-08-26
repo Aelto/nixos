@@ -3,6 +3,7 @@
 {
   imports = [
     ../modules/tools.nix
+    ../modules/nodejs.nix
   ];
 
   wsl = {
@@ -20,4 +21,7 @@
     domain = "ashford.example.com";
     backendPort = 3000;
   };
+  imports = [
+    ../modules/nginx.nix
+  ];
 }
