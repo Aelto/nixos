@@ -4,20 +4,16 @@ let
   cfg = config.my.nginx;
 in
 {
-  options.my.nginx = lib.mkOption {
-    type = lib.types.attrsOf (lib.types.submodule {
-      options = {
-        enable = lib.mkEnableOption "nginx reverse proxying";
+  options.my.nginx = {
+    enable = lib.mkEnableOption "nginx reverse proxying";
 
-        domain = lib.mkOption {
-          type = lib.types.str;
-        };
+    domain = lib.mkOption {
+      type = lib.types.str;
+    };
 
-        backendPort = lib.mkOption {
-          type = lib.types.port;
-        };
-      };
-    });
+    backendPort = lib.mkOption {
+      type = lib.types.port;
+    };
   };
 
   config = lib.mkIf cfg.enable {
