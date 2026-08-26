@@ -7,6 +7,8 @@ in
   options.my.nginx = lib.mkOption {
     type = lib.types.attrsOf (lib.types.submodule {
       options = {
+        enable = lib.mkEnableOption "nginx reverse proxying";
+
         domain = lib.mkOption {
           type = lib.types.str;
         };
