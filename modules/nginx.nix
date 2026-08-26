@@ -18,14 +18,16 @@ in
     });
   };
 
-  lib.mapAttrs (name: proxy: {
-    config.services.nginx.virtualHosts."${proxy.domain}" = {
-      serverName = proxy.domain;
+  config = lib.mkIf = cfg.enable {
+    services.nginx = {
+      enable = true;
 
-      locations."/" = {
-        proxyPass = "http://127.0.0.1:${toString proxy.backendPort}";
-        proxyWebsockets = true;
+      virtualHosts.${cfg.domain} = {
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:${toString cfg.backendPort}";
+          proxyWebsockets = true;
+        };
       };
     };
-  }) config.my.nginx;
+  };
 }

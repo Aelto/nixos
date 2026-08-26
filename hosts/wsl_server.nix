@@ -16,9 +16,8 @@
   system.stateVersion = "26.05";
 
   my.nginx = {
-    nodejs_backend = {
-      domain = "grafana.example.com";
-      backendPort = 3000;
-    };
+    enable = true;
+    domain = "ashford.example.com";
+    backendPort = 3000;
   };
 }
