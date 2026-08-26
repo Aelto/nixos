@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     git
-    curl wget htop ssh
+    curl wget htop
     just zed-editor
   ];
 }
