@@ -18,7 +18,7 @@ in
     });
   };
 
-  config = lib.mkIf = cfg.enable {
+  config = lib.mkIf cfg.enable {
     services.nginx = {
       enable = true;
 
