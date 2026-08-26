@@ -23,7 +23,6 @@
       modules = [
         nixos-wsl.nixosModules.wsl
         ./hosts/wsl_server.nix
-        self.nixosModules.my_nginx
       ];
     };
   };
