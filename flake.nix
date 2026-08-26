@@ -9,6 +9,8 @@
 
   outputs = { self, nixpkgs, nixos-wsl, ... }:
   {
+    nixosModules.my_nginx = import ./modules/nginx.nix;
+
     nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
