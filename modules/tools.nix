@@ -4,6 +4,6 @@
   environment.systemPackages = with pkgs; [
     git
     curl wget htop
-    just
+    just zed-editor
   ];
 }
